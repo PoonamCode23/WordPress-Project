@@ -1,0 +1,226 @@
+/*Front Page Banner*/
+.slider {
+  position: absolute;
+  top: 0;
+  color: white;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+.slide {
+  height: 100%;
+  width: 100%;
+}
+/*image slider*/
+.slide img {
+  width: 100%; /* Make sure the image covers the slide container */
+  height: 100%; /* Ensure image takes full height */
+  object-fit: cover; /* Keep image aspect ratio intact */
+
+  background-size: cover; /* Ensure gradient covers the image */
+  background-position: center center; /* Center the background image */
+}
+.slide::before {
+  content: ""; /* Create an empty pseudo-element */
+  position: absolute; /* Position it over the image */
+  top: 0;
+  opacity: 0.5;
+  left: 0;
+  width: 100%; /* Ensure the pseudo-element covers the full width */
+  height: 100%; /* Ensure the pseudo-element covers the full height */
+  background: linear-gradient(
+    to right,
+    black,
+    rgba(247, 252, 254, 0)
+  ); /* Add the gradient */
+  z-index: 2; /* Place the gradient on top of the image */
+}
+
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/*banner*/
+.banner-description {
+  position: relative;
+  color: white;
+  left: 72px;
+  z-index: 3;
+}
+
+.contact-button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 20px 20px;
+  /* width: 26%; */
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: darkblue;
+}
+
+/* Styling the paragraph */
+.styled-paragraph {
+  width: 300px; /* Figma width */
+  height: 35px; /* Figma height */
+  padding: 8px 24px; /* Figma padding */
+  gap: 8px; /* For spacing between text and other elements */
+  border-radius: 36px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.08);
+  color: white; /* Text color */
+  font-size: 16px;
+  text-align: center; /* Centering the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-text {
+  color: #fff;
+  font-family: Epilogue;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  letter-spacing: -1.12px;
+  width: 650px;
+}
+
+.third-banner-text {
+  width: 417px;
+  color: #fff;
+  font-family: Epilogue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Mobile Menu */
+.navbar .mobile-menu-items {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(154, 192, 204, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.navbar .mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 300px;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.navbar .mobile-menu-toggle {
+  cursor: pointer;
+}
+
+.navbar .mobile-menu-items.active {
+  transform: translateX(0);
+}
+
+.navbar .mobile-menu {
+  display: none;
+}
+
+/*About Us Section*/
+.about-us-container {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 120px 72px;
+}
+
+/* Left column */
+.info-section {
+  flex: 1;
+}
+.info-section .label {
+  display: inline-block;
+  background-color: #e5f0fd; /* Light background for "About Us" */
+  color: #2c65c8; /* Text color complementing the background */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.info-section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.btn-know-more {
+  display: inline-block;
+  background-color: #fff;
+  color: #2c65c8;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
+  font-weight: bold;
+  border: 2px solid #2c65c8;
+  transition: background-color 0.3s ease;
+}
+
+/* Right column */
+.image-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+/*
+          This is the peach background behind the image.
+          You can adjust the color, shape, and size.
+        */
+.peach-background {
+  position: absolute;
+  top: -10%;
+  left: 8%;
+
+  height: 120%;
+  width: 100%;
+  border-radius: 40px;
+  background-color: #ffe1c5;
+  z-index: -1;
+}
+.image-section img {
+  max-width: 100%;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .about-us-container {
+    flex-direction: column;
+  }
+  .image-section {
+    margin-top: 2rem;
+  }
+  .peach-background {
+    left: 5%;
+  }
+}
