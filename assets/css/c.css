@@ -1,0 +1,506 @@
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #616161;
+  }
+  /*Front Page Banner*/
+  .wrapper {
+    padding: 0 72px;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    color: white;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+  .slide {
+    height: 100%;
+    width: 100%;
+  }
+  /*image slider*/
+  .slide img {
+    width: 100%; /* Make sure the image covers the slide container */
+    height: 100%; /* Ensure image takes full height */
+    object-fit: cover; /* Keep image aspect ratio intact */
+  
+    background-size: cover; /* Ensure gradient covers the image */
+    background-position: center center; /* Center the background image */
+  }
+  .slide::before {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Position it over the image */
+    top: 0;
+    opacity: 0.5;
+    left: 0;
+    width: 100%; /* Ensure the pseudo-element covers the full width */
+    height: 100%; /* Ensure the pseudo-element covers the full height */
+    background: linear-gradient(
+      to right,
+      black,
+      rgba(247, 252, 254, 0)
+    ); /* Add the gradient */
+    z-index: 2; /* Place the gradient on top of the image */
+  }
+  
+  .hero-slider {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  /*banner*/
+  .banner-description {
+    position: relative;
+    color: white;
+    padding-left: 72px;
+    z-index: 3;
+  }
+  
+  .contact-button {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    /* width: 26%; */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styling the paragraph */
+  .styled-paragraph {
+    width: 300px;
+    height: 35px;
+    padding: 8px 24px;
+    gap: 8px; /* For spacing between text and other elements */
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-text {
+    color: #fff;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 64px;
+    letter-spacing: -1.12px;
+    width: 650px;
+  }
+  
+  .third-banner-text {
+    width: 417px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  
+  /* Mobile Menu */
+  .navbar .mobile-menu-items {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(154, 192, 204, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+  }
+  
+  .navbar .mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-top: 300px;
+    gap: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .navbar .mobile-menu-toggle {
+    cursor: pointer;
+  }
+  
+  .navbar .mobile-menu-items.active {
+    transform: translateX(0);
+  }
+  
+  .navbar .mobile-menu {
+    display: none;
+  }
+  
+  /*About Us Section*/
+  .about-us-container,
+  .our-expertise-container,
+  .why-choose-us-container,
+  .commitment-container {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 120px 72px;
+  }
+  
+  /* Left column */
+  .info-section {
+    flex: 1 0 40%;
+    max-width: 60%;
+  }
+  
+  .info-section .label {
+    display: inline-block;
+    background-color: #e5f0fd;
+    color: #2c65c8;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  .info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .info-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  .btn-know-more {
+    display: inline-block;
+    background-color: #fff;
+    color: #2c65c8;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 2px solid #2c65c8;
+    transition: background-color 0.3s ease;
+  }
+  .btn-know-more:hover {
+    color: black;
+  }
+  
+  .image-shadow-container {
+    position: relative;
+    padding-right: 72px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .image-section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Pseudo-element to replace .background-shape */
+  .image-section::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 8%;
+    height: 120%;
+    width: 100%;
+    border-radius: 40px;
+    z-index: -1;
+  }
+  
+  .image-section.peach::before {
+    background-color: #ffe1c5;
+  }
+  
+  .image-section.blue::before {
+    background-color: #e5efff;
+  }
+  
+  .image-section.purple::before {
+    background-color: #2b1c50;
+  }
+  
+  .image-section img {
+    max-width: 90%;
+    aspect-ratio: 2/1.6;
+    border-radius: 40px;
+    object-fit: cover;
+  }
+  
+  /*committment section*/
+  .image-section-commitment img {
+    height: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .image-section-commitment {
+    width: 100%;
+    aspect-ratio: 5.9 / 6.8;
+    max-width: 591px;
+    max-height: 689px;
+  }
+  
+  .contact-us {
+    background-color: #0066ff;
+  }
+  a.contact-us {
+    color: white !important;
+    text-decoration: none;
+  }
+  a.btn-know-more {
+    text-decoration: none;
+    color: #0066ff;
+  }
+  
+  /* What we offer Container styling */
+  .what-we-offer {
+    background-color: #f5f9ff;
+    padding: 144px 72px;
+    text-align: center;
+  }
+  
+  .what-we-offer__intro {
+    margin-bottom: 2rem;
+  }
+  
+  .what-we-offer__subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  /* Grid layout */
+  .what-we-offer__card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .what-we-offer__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .what-we-offer__image-wrapper {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .what-we-offer__image {
+    width: 64px;
+    height: 64px;
+  }
+  
+  /* Title and description */
+  .what-we-offer__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .what-we-offer__description {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Button styling */
+  .what-we-offer__button .btn--primary {
+    background-color: white;
+    color: #0066ff;
+    border: 1px solid #0066ff;
+    padding: 20px 40px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .what-we-offer__button .btn--primary:hover {
+    background-color: #0052cc;
+    color: white;
+  }
+  
+  
+  
+  /*testimonial section*/
+  .testimonials-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f9ff;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .testimonials-section p.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 auto;
+    padding: 0 72px;
+  }
+  
+  .testimonial-card {
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    flex: 1 1 0;
+  }
+  
+  .testimonial-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  .testimonial-card .author {
+    margin-top: 20px;
+  }
+  
+  .testimonial-card .author-name {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .testimonial-card .author-title {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 0.3;
+    transition: 0.3s ease;
+  }
+  
+  .dot.active {
+    opacity: 1;
+  }
+  @media (max-width: 500px) {
+    .wrapper {
+      padding: 0 20px;
+    }
+    .banner-description h1{
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    h1{
+      font-size:32px;
+      line-height: 40px;
+      font-weight: 600;
+    }
+    p{
+      font-weight:400;
+      font-size:16px;
+      line-height:24px;
+    }
+   .banner-description {
+      padding:0 20px;
+    }
+  
+  @media (max-width: 768px) {
+    .testimonial-container {
+      flex-direction: column;
+      align-items: center;
+      margin: -44px;
+    }
+    .testimonial-card {
+      width: 120%;
+    }
+  }
+  /* Responsive Grid */
+  @media (max-width:768px){
+    .ribbon-content > .title{
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+    }}
+  
+  @media (min-width: 1100px){
+    .what-we-offer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      justify-items: center;
+    }
+  
+    .what-we-offer__intro {
+      grid-column: 1 / -1;
+    }
+  }
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .about-us-container,
+    .our-expertise-container,
+    .why-choose-us-container,
+    .commitment-container {
+      flex-direction: column;
+    }
+    .info-section {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .image-section {
+      margin-top: 2rem;
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .peach-background,
+    .blue-background,
+    .purple-background {
+      left: 5%;
+    }
+  }
+  

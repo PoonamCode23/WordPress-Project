@@ -190,7 +190,7 @@ function poonam_enqueue_styles_and_scripts() {
         // wp_enqueue_script( 'slider', get_template_directory_uri() . '/assets/js/slider.js', array(), false, true );
 		wp_enqueue_script(
 			'menu-toggle', 
-			get_template_directory_uri() . '/assets/js/menu-toggle.js', 
+			get_template_directory_uri() . '/assets/js/custom-script.js', 
 			false, // Version (set it to false or provide version number)
 			true // Load in footer (true to load at the end of the page, recommended for performance)
 		);
@@ -201,3 +201,24 @@ add_action( 'wp_enqueue_scripts', 'poonam_enqueue_styles_and_scripts' );
 
 require get_template_directory() . '/inc/home-page-custom-meta-box.php';
 
+function register_testimonial_post_type() {
+    register_post_type('testimonial', array(
+        'label' => 'Testimonials',
+        'public' => true,
+        'menu_icon' => 'dashicons-format-quote',
+        'supports' => array('title', 'editor'),
+        'has_archive' => false,
+        'show_in_rest' => true, // for block editor support
+    ));
+
+	 // Register What We Offer Post Type
+	 register_post_type('offer', array(
+        'label' => 'What We Offer',
+        'public' => true,
+        'menu_icon' => 'dashicons-awards',
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'has_archive' => false,
+        'show_in_rest' => true,
+    ));
+}
+add_action('init', 'register_testimonial_post_type');
