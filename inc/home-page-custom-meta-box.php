@@ -221,7 +221,8 @@ add_action('save_post', 'custom_save_about_us_meta_data');
 function custom_add_testimonials_meta_box() {
     $front_page_id = get_option('page_on_front');
 
-    if (is_admin() && get_the_ID() == $front_page_id) {
+    if (is_admin() && (get_the_ID() == $front_page_id || get_the_ID() == 81)) {
+
         add_meta_box(
             'custom_testimonials_meta_box',
             'Edit Testimonials Section',
@@ -416,3 +417,78 @@ function custom_save_offers_meta_data($post_id) {
     }
 }
 add_action('save_post', 'custom_save_offers_meta_data');
+
+
+//add custom footer section
+function custom_add_footer_meta_box() {
+    $front_page_id = get_option('page_on_front');
+
+    if (is_admin() && get_the_ID() == $front_page_id) {
+        add_meta_box(
+            'custom_footer_meta_box',
+            'Edit Footer Section',
+            'custom_render_footer_meta_box',
+            'page',
+            'side',
+            'default'
+        );
+    }
+}
+add_action('add_meta_boxes', 'custom_add_footer_meta_box');
+
+// Render the Meta Box HTML
+function custom_render_footer_meta_box($post) {
+    wp_nonce_field('custom_footer_nonce_action', 'custom_footer_nonce');
+
+    // get current meta value
+    $footer_data = get_post_meta($post->ID, '_footer_data', true);
+    $headline = $footer_data['headline'] ?? '';
+    $paragraph = $footer_data['paragraph'] ?? '';
+    $button_text = $footer_data['button_text'] ?? '';
+    $button_link = $footer_data['button_link'] ?? '';
+    $quick_links = $footer_data['quick_links'] ?? [];
+    if (!is_array($quick_links)) $quick_links = [];
+    ?>
+    <label>Headline:</label>
+    <input type="text" name="footer_data[headline]" value="<?php echo esc_attr($headline); ?>" style="width:100%;" />
+
+    <label>Paragraph:</label>
+    <textarea name="footer_data[paragraph]" style="width:100%;"><?php echo esc_textarea($paragraph); ?></textarea>
+
+    <label>Button Text:</label>
+    <input type="text" name="footer_data[button_text]" value="<?php echo esc_attr($button_text); ?>" style="width:100%;" />
+
+    <label>Button Link:</label>
+    <input type="text" name="footer_data[button_link]" value="<?php echo esc_url($button_link); ?>" style="width:100%;" />
+
+    <h3>Quick Links</h3>
+    <div id="quick-links-wrapper">
+        <?php foreach ($quick_links as $index => $link): ?>
+            <div style="margin-bottom:10px;">
+                <label>Link Text:</label>
+                <input type="text" name="footer_data[quick_links][<?php echo $index; ?>][text]" value="<?php echo esc_attr($link['text']); ?>" style="width:45%;" />
+                <label>URL:</label>
+                <input type="text" name="footer_data[quick_links][<?php echo $index; ?>][url]" value="<?php echo esc_url($link['url']); ?>" style="width:45%;" />
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button type="button" class="button" onclick="addQuickLink()">+ Add Quick Link</button>
+
+    <script>
+    function addQuickLink() {
+        const container = document.getElementById('quick-links-wrapper');
+        const index = container.children.length;
+
+        const div = document.createElement('div');
+        div.style.marginBottom = '10px';
+        div.innerHTML = `
+            <label>Link Text:</label>
+            <input type="text" name="footer_data[quick_links][${index}][text]" style="width:45%;" />
+            <label>URL:</label>
+            <input type="text" name="footer_data[quick_links][${index}][url]" style="width:45%;" />
+        `;
+        container.appendChild(div);
+    }
+    </script>
+    <?php
+}

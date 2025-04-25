@@ -1,0 +1,227 @@
+/*statistics display card*/
+.stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f7fafd;
+}
+
+.stats h2 {
+  color: #007bff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.stats p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #555;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.intro h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+.cleaning-solutions,
+.mission {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 120px 72px;
+}
+.section-one-image-section img,
+.image-cleaning-solutions img,
+.image-mission img {
+  width: 100%;
+  height: 100%;
+}
+.section-one > div {
+  flex: 0 0 calc(50% - 32px);
+  height: auto;
+}
+
+.image-cleaning-solutions,
+.image-mission {
+  flex: 0 0 calc(50% - 32px);
+  max-width: 100%;
+}
+.cleaning-info-section,
+.mission-info-section {
+  flex: 0 0 calc(50% - 32px);
+}
+.mission-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mission-points li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 28px;
+}
+
+.mission-points li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.intro p {
+  max-width: 500px;
+  color: #555;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.more-features {
+  padding: 120px 0;
+}
+
+.col-one {
+  flex: 0 0 28%;
+  max-width: 100%;
+}
+
+.col-two {
+  flex: 0 0 72%;
+  max-width: 100%;
+}
+.image-part img,
+.image-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  display: block;
+  max-width: 100%;
+}
+.feature-bottom {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+/*first section in aboutus page*/
+.section-one {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 126px 72px !important;
+}
+.col-one {
+  width: calc(28%-22px);
+  height: 100%;
+}
+.col-one {
+  width: calc(72%-22px);
+  height: 100%;
+}
+/*Meet our team*/
+.team-introduction {
+  text-align: center;
+}
+/* .team-photo {
+  display: flex;
+  justify-content: space-between;
+} */
+/* .team-photo {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 72px;
+  flex-wrap: wrap; 
+  box-sizing: border-box;
+} */
+/* 
+.team-member {
+  flex: 1;
+  max-width: calc((100% - 100px) / 2); 
+} */
+
+/* .team-member img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+} */
+.intro {
+  padding: 30px 72px !important;
+}
+.mission,
+.cleaning-solutions {
+  padding: 96px 72px !important;
+}
+.team {
+  background-color: #f5f9ff;
+  padding: 120px 0 !important;
+}
+.team-photo {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px; /* Adjust spacing between items if needed */
+}
+
+.team-photo > div {
+  flex: 1; /* Makes them take equal space */
+  max-width: 100%; /* Prevents them from stretching too much */
+}
+
+.team-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/*RESPONSIVE DESIGN*/
+
+@media (max-width: 800px) {
+  .section-one,
+  .feature-bottom,
+  .features,
+  .team-photo,
+  .cleaning-solutions,
+  .mission {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .wrapper {
+    padding: 0 22px !important;
+  }
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stats > div {
+  flex: 1 1 25%; /* 4 in a row */
+}
+
+@media (max-width: 900px) {
+  .stats > div {
+    flex: 1 1 50%; /* 2 in a row */
+  }
+}
+@media (max-width: 600px) {
+  .stats > div {
+    flex: 1 1 100%; /* 1 per row */
+  }
+}

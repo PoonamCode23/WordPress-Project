@@ -182,11 +182,7 @@ function poonam_enqueue_styles_and_scripts() {
 	
     // Always load the main style.css
     wp_enqueue_style( 'poonam-style', get_stylesheet_uri() );
-
-    // Load slider CSS only on front-page.php
-    if ( is_front_page() ) {
-		wp_enqueue_style( 'aboutus-style', get_template_directory_uri() . '/assets/css/front-page.css' );
-        // Load slider JS only on front-page.php
+ // Load slider JS only on front-page.php
         // wp_enqueue_script( 'slider', get_template_directory_uri() . '/assets/js/slider.js', array(), false, true );
 		wp_enqueue_script(
 			'menu-toggle', 
@@ -194,14 +190,30 @@ function poonam_enqueue_styles_and_scripts() {
 			false, // Version (set it to false or provide version number)
 			true // Load in footer (true to load at the end of the page, recommended for performance)
 		);
+    // Load slider CSS only on front-page.php
+    if ( is_front_page() ) {
+		wp_enqueue_style( 'homepage-style', get_template_directory_uri() . '/assets/css/front-page.css' );
+
+       
     }
 
 }
 add_action( 'wp_enqueue_scripts', 'poonam_enqueue_styles_and_scripts' );
 
-require get_template_directory() . '/inc/home-page-custom-meta-box.php';
+function custom_enqueue_aboutus_styles() {
+    if ( is_page( array( 78, 81 ) ) ) {
+		wp_enqueue_style( 'aboutus-style', get_template_directory_uri() . '/assets/css/about-us.css' );
+		wp_enqueue_style( 'homepage-style', get_template_directory_uri() . '/assets/css/front-page.css' );
+	}
+}	
 
-function register_testimonial_post_type() {
+add_action( 'wp_enqueue_scripts', 'custom_enqueue_aboutus_styles' );
+
+require get_template_directory() . '/inc/home-page-custom-meta-box.php';
+require get_template_directory() . '/inc/aboutus-page-custom-meta-box.php';
+
+
+function register_testimonial_post_type() { 
     register_post_type('testimonial', array(
         'label' => 'Testimonials',
         'public' => true,
@@ -222,3 +234,15 @@ function register_testimonial_post_type() {
     ));
 }
 add_action('init', 'register_testimonial_post_type');
+
+
+function register_footer_menus() {
+    register_nav_menus([
+        'footer_quick_links' => 'Footer – Quick Links',
+        'footer_services' => 'Footer – Services',
+        'footer_contact' => 'Footer – Contact',
+    ]);
+}
+add_action('after_setup_theme', 'register_footer_menus');
+
+

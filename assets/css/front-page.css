@@ -180,7 +180,7 @@ p {
   margin-bottom: 1rem;
 }
 .info-section p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 4.5rem;
   line-height: 1.6;
 }
 .btn-know-more {
@@ -385,7 +385,7 @@ a.btn-know-more {
 
 .testimonial-card p {
   color: #444;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -461,6 +461,12 @@ a.btn-know-more {
   .banner-description {
     padding: 0 20px;
   }
+  .testimonial-card {
+    width: 160%;
+  }
+  .testimonial-container {
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -469,7 +475,7 @@ a.btn-know-more {
     align-items: center;
   }
   .testimonial-card {
-    width: 134%;
+    width: 100%;
   }
 
   .testimonials-section {

@@ -32,8 +32,22 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
+			
+			<?php if ( is_front_page() ) : ?>
+				<!-- Show both logos for scroll effect on front page -->
+			 <div class="logo logo-default">
+				<?php the_custom_logo()?>
+			 </div>
+
+			 	<img class="alternate-logo logo-scrolled" src="<?php echo get_template_directory_uri(); ?>/images/logo2.svg" alt="Logo 2">
+			<?php else : ?>
+				<!-- Just show the alternate logo for inner pages -->
+				<a href="http://localhost/wordpress/" class="alternate-logo-link">
+  					 <img class="alternate-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo2.svg" alt="Logo 2">
+				</a>
+				
+			<?php endif; ?>
 			<?php
-			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
 				<?php
@@ -49,8 +63,10 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'poonam_themes' ); ?></button>
+		<nav id="site-navigation" class="main-navigation <?php echo is_front_page() ? 'nav-front' : 'nav-inner'; ?>">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<?php esc_html_e( 'Primary Menu', 'poonam_themes' ); ?>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -59,6 +75,8 @@
 				)
 			);
 			?>
+
+
 			<!-- Moblie Menu -->
 			<!-- <div class="mobile-menu">
 				<div class="mobile-menu-toggle">
@@ -91,9 +109,12 @@
 
 <!-- mobile nav -->
 <div class="mobile-nav">
-    <div class="mobile-menu-toggle">
-        <i class="fas fa-bars fa-2x"></i>
-    </div>
+	<div class="mobile-menu-toggle">
+	<i class="fas fa-bars fa-2x mobile-icon <?php echo is_front_page() ? 'icon-white' : 'icon-black'; ?>"></i>
+	</div>
+
+	
+</div>
 
     <nav class="mobile-nav-container">
         <?php 

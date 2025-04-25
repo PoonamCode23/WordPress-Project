@@ -194,35 +194,8 @@ if (!empty($offers)) :
 
 
 
-  <!-- Testimonials Section -->
-  <section class="testimonials-section">
-    <h2>Testimonials</h2>
+  <?php get_template_part('template-parts/testimonials'); ?>
 
-    <?php
-    $testimonials = get_post_meta(get_the_ID(), '_testimonials', true);
-    if (!empty($testimonials)) :
-    ?>
-      <div class="testimonial-container">
-        <?php foreach ($testimonials as $testimonial) : ?>
-          <div class="testimonial-card">
-            <h3><?php echo esc_html($testimonial['title']); ?></h3>
-            <p><?php echo esc_html($testimonial['description']); ?></p>
-            <div class="author">
-              <a href="#" class="author-name"><?php echo esc_html($testimonial['author_name']); ?></a><br>
-              <span class="author-title"><?php echo esc_html($testimonial['author_title']); ?></span>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    <?php endif; ?>
-
-    <div class="slider-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
 
 </main>
 
