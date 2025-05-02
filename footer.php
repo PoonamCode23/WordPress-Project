@@ -79,7 +79,7 @@
 
 			<div class="footer-bottom">
 				<div class="footer-bottom-left">
-					<a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+					<a href="http://localhost/wordpress/index.php/privacy-policy/">Privacy Policy</a> | <a href="http://localhost/wordpress/index.php/privacy-policy/">Terms & Conditions</a>
 				</div>
 				<div class="footer-bottom-right">
 					<p>Copyright &copy; <?php echo date('Y'); ?> @ebpearls</p>

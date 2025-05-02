@@ -16,7 +16,7 @@
 .stats p {
   font-size: 20px;
   font-weight: 600;
-  line-height: 32px;
+  line-height: 1.6;
   color: #555;
 }
 
@@ -38,7 +38,6 @@
   display: flex;
   align-items: center;
   gap: 4rem;
-  padding: 120px 72px;
 }
 .section-one-image-section img,
 .image-cleaning-solutions img,
@@ -88,9 +87,8 @@
   justify-content: space-between;
   gap: 48px;
 }
-
 .more-features {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 
 .col-one {
@@ -115,22 +113,18 @@
   justify-content: space-around;
   gap: 50px;
 }
+.col-one .image-part {
+  height: 100%;
+}
 /*first section in aboutus page*/
 .section-one {
   padding: 2rem;
   display: flex;
   align-items: center;
   gap: 4rem;
-  padding: 126px 72px !important;
+  padding: 160px 72px !important;
 }
-.col-one {
-  width: calc(28%-22px);
-  height: 100%;
-}
-.col-one {
-  width: calc(72%-22px);
-  height: 100%;
-}
+
 /*Meet our team*/
 .team-introduction {
   text-align: center;
@@ -163,7 +157,7 @@
 }
 .mission,
 .cleaning-solutions {
-  padding: 96px 72px !important;
+  padding: 60px 72px !important;
 }
 .team {
   background-color: #f5f9ff;
@@ -193,19 +187,52 @@
   .section-one,
   .feature-bottom,
   .features,
-  .team-photo,
-  .cleaning-solutions,
   .mission {
     display: flex;
     flex-direction: column;
+  }
+  .cleaning-solutions {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 @media (max-width: 500px) {
   .wrapper {
     padding: 0 22px !important;
   }
+  .team-photo {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-one,
+  .team,
+  .mission {
+    padding: 50px 22px !important;
+  }
+  .more-features {
+    padding: 50px 0px !important;
+  }
+  .intro,
+  .feature-bottom {
+    gap: unset;
+  }
+  .section-one-image-section {
+    margin-top: -60px;
+  }
+  .col-two .image-card img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+  /* .team-introduction h2 {
+    padding: 50px 0;
+  }
+  .team-introduction p {
+    padding: 5px;
+    margin-top: -42px;
+  } */
 }
-
 .stats {
   display: flex;
   flex-wrap: wrap;

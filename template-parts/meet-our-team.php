@@ -1,6 +1,6 @@
 <section id="team" class="team wrapper">
     <div class="team-introduction">
-        <h2>Meet Our Team</h2>
+        <h1>Meet Our Team</h1>
         <p>We are the leaders of cleaning services in Australia. With over 15 years of expertise.</p>
     </div>
 

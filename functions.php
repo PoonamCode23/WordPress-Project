@@ -201,9 +201,12 @@ function poonam_enqueue_styles_and_scripts() {
 add_action( 'wp_enqueue_scripts', 'poonam_enqueue_styles_and_scripts' );
 
 function custom_enqueue_aboutus_styles() {
-    if ( is_page( array( 78, 81 ) ) ) {
+    if ( is_page( array( 78, 81,3, 84, 156) ) ) {
 		wp_enqueue_style( 'aboutus-style', get_template_directory_uri() . '/assets/css/about-us.css' );
 		wp_enqueue_style( 'homepage-style', get_template_directory_uri() . '/assets/css/front-page.css' );
+		wp_enqueue_style( 'service-page-style', get_template_directory_uri() . '/assets/css/services.css' );
+		wp_enqueue_style( 'contact-us-style', get_template_directory_uri() . '/assets/css/contact-us.css' );
+		wp_enqueue_style( 'policies-faq', get_template_directory_uri() . '/assets/css/privacypolicy-faq.css' );
 	}
 }	
 
@@ -211,29 +214,11 @@ add_action( 'wp_enqueue_scripts', 'custom_enqueue_aboutus_styles' );
 
 require get_template_directory() . '/inc/home-page-custom-meta-box.php';
 require get_template_directory() . '/inc/aboutus-page-custom-meta-box.php';
+require get_template_directory() . '/inc/faq_meta_box.php';
+require get_template_directory() . '/inc/contacts.php';
 
 
-function register_testimonial_post_type() { 
-    register_post_type('testimonial', array(
-        'label' => 'Testimonials',
-        'public' => true,
-        'menu_icon' => 'dashicons-format-quote',
-        'supports' => array('title', 'editor'),
-        'has_archive' => false,
-        'show_in_rest' => true, // for block editor support
-    ));
 
-	 // Register What We Offer Post Type
-	 register_post_type('offer', array(
-        'label' => 'What We Offer',
-        'public' => true,
-        'menu_icon' => 'dashicons-awards',
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'has_archive' => false,
-        'show_in_rest' => true,
-    ));
-}
-add_action('init', 'register_testimonial_post_type');
 
 
 function register_footer_menus() {
@@ -246,3 +231,30 @@ function register_footer_menus() {
 add_action('after_setup_theme', 'register_footer_menus');
 
 
+
+function krisli_register_cleaning_services_cpt() {
+    $labels = array(
+        'name' => 'Cleaning Services',
+        'singular_name' => 'Cleaning Service',
+        'add_new' => 'Add New Service',
+        'add_new_item' => 'Add New Cleaning Service',
+        'edit_item' => 'Edit Cleaning Service',
+        'new_item' => 'New Cleaning Service',
+        'view_item' => 'View Cleaning Service',
+        'search_items' => 'Search Cleaning Services',
+        'not_found' => 'No services found',
+        'menu_name' => 'Cleaning Services'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => false,
+		'menu_icon' => 'dashicons-awards',
+        'rewrite' => array('slug' => 'cleaning-services'),
+        'supports' => array('title', 'editor', 'thumbnail'),
+    );
+
+    register_post_type('cleaning_service', $args);
+}
+add_action('init', 'krisli_register_cleaning_services_cpt');

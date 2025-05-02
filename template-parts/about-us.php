@@ -51,7 +51,7 @@ get_header();
         <div class="feature-bottom wrapper">
             <?php for ($i = 1; $i <= 3; $i++): ?>
                 <div>
-                    <h4><?php echo esc_html($get("feature{$i}_title")); ?></h4>
+                    <h3><?php echo esc_html($get("feature{$i}_title")); ?></h3>
                     <p><?php echo esc_html($get("feature{$i}_desc")); ?></p>
                 </div>
             <?php endfor; ?>
@@ -73,7 +73,7 @@ get_header();
       <p>
         At Kris & Li Cleaning Services, we prioritize the health and safety of our clients and their environments. Our strict adherence to Occupational Health and Safety (OHS) principles ensures that we effectively prevent cross-contamination between cleaning sites and within each facility.
       </p>
-      <a href="#" class="btn-know-more contact-us">View Services</a>
+      <a href="#" class="contact-button">View Services</a>
     </div>
   </section>
 

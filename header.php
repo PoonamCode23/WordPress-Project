@@ -30,7 +30,8 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'poonam_themes' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header <?php if (!is_page(47)) echo 'other-page'; ?>">
+
 		<div class="site-branding">
 			
 			<?php if ( is_front_page() ) : ?>
@@ -111,6 +112,7 @@
 <div class="mobile-nav">
 	<div class="mobile-menu-toggle">
 	<i class="fas fa-bars fa-2x mobile-icon <?php echo is_front_page() ? 'icon-white' : 'icon-black'; ?>"></i>
+	<i class="fas fa-times fa-2x mobile-icon <?php echo is_front_page() ? 'icon-white' : 'icon-black'; ?>"></i>
 	</div>
 
 	

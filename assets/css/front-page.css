@@ -1,5 +1,6 @@
 h1 {
   font-size: 48px;
+  margin: 24px 0 !important;
   font-weight: 600;
 }
 p {
@@ -11,6 +12,12 @@ p {
 /*Front Page Banner*/
 .wrapper {
   padding: 0 72px;
+}
+.font-wrapper {
+  line-height: 24px;
+  font-size: 24px;
+  letter-spacing: 8%;
+  font-weight: 500;
 }
 
 .slider {
@@ -53,7 +60,7 @@ p {
 
 .hero-slider {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -65,19 +72,6 @@ p {
   color: white;
   padding-left: 72px;
   z-index: 3;
-}
-
-.contact-button {
-  background-color: #0066ff;
-  color: white;
-  border: none;
-  padding: 20px 20px;
-  /* width: 26%; */
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 25px;
-  margin-top: 30px;
-  transition: background-color 0.3s ease;
 }
 
 /* Styling the paragraph */
@@ -169,9 +163,8 @@ p {
   display: inline-block;
   background-color: #e5f0fd;
   color: #2c65c8;
-  padding: 0.5rem 1rem;
+  padding: 8px 24px;
   border-radius: 20px;
-  margin-bottom: 1rem;
   font-size: 0.9rem;
   font-weight: bold;
 }
@@ -180,19 +173,75 @@ p {
   margin-bottom: 1rem;
 }
 .info-section p {
-  margin-bottom: 4.5rem;
+  margin-bottom: 24px;
   line-height: 1.6;
 }
-.btn-know-more {
-  display: inline-block;
-  background-color: #fff;
-  color: #2c65c8;
-  padding: 0.75rem 1.25rem;
-  border-radius: 30px;
+
+.contact-button {
+  display: inline-flex;
   font-weight: bold;
-  border: 2px solid #2c65c8;
+  align-items: center;
+  font-style: normal;
+  gap: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  overflow: hidden;
+  line-height: 24;
+  line-height: 1.5rem;
+  max-height: 3.5625rem;
+  min-width: 10.25rem;
+  text-align: center;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  padding: 20px 40px;
+  /* width: 26%; */
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 30px;
   transition: background-color 0.3s ease;
 }
+.btn-know-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px; /* space between text and icon */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24;
+  font-weight: bold;
+  line-height: 1.5rem;
+  max-height: 3.5625rem;
+  min-width: 10.25rem;
+  background-color: #fff;
+  color: #2c65c8;
+  padding: 20px 40px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid #2c65c8;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.icon-right {
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M13.7654 5.20511C13.4644 4.92049 12.9897 4.93371 12.7051 5.23464C12.4205 5.53558 12.4337 6.01027 12.7346 6.29489L17.9737 11.25H5.25C4.83579 11.25 4.5 11.5858 4.5 12C4.5 12.4142 4.83579 12.75 5.25 12.75H17.976L12.7346 17.7073C12.4337 17.9919 12.4205 18.4666 12.7051 18.7675C12.9897 19.0684 13.4644 19.0817 13.7654 18.797L20.1826 12.7276C20.3489 12.5703 20.4489 12.3702 20.4826 12.1614C20.494 12.1094 20.5 12.0554 20.5 12C20.5 11.9424 20.4935 11.8863 20.4812 11.8325C20.4462 11.6267 20.3467 11.4298 20.1826 11.2746L13.7654 5.20511Z" fill="%233864FF"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-right-white {
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M13.7654 5.20511C13.4644 4.92049 12.9897 4.93371 12.7051 5.23464C12.4205 5.53558 12.4337 6.01027 12.7346 6.29489L17.9737 11.25H5.25C4.83579 11.25 4.5 11.5858 4.5 12C4.5 12.4142 4.83579 12.75 5.25 12.75H17.976L12.7346 17.7073C12.4337 17.9919 12.4205 18.4666 12.7051 18.7675C12.9897 19.0684 13.4644 19.0817 13.7654 18.797L20.1826 12.7276C20.3489 12.5703 20.4489 12.3702 20.4826 12.1614C20.494 12.1094 20.5 12.0554 20.5 12C20.5 11.9424 20.4935 11.8863 20.4812 11.8325C20.4462 11.6267 20.3467 11.4298 20.1826 11.2746L13.7654 5.20511Z" fill="%23fff"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .btn-know-more:hover {
   color: black;
 }
@@ -255,13 +304,6 @@ p {
   max-height: 689px;
 }
 
-.contact-us {
-  background-color: #0066ff;
-}
-a.contact-us {
-  color: white !important;
-  text-decoration: none;
-}
 a.btn-know-more {
   text-decoration: none;
   color: #0066ff;
@@ -280,6 +322,7 @@ a.btn-know-more {
 
 .what-we-offer__subtitle {
   font-size: 1rem;
+  max-width: 442px;
   color: #6c757d;
 }
 
@@ -290,12 +333,12 @@ a.btn-know-more {
   padding: 48px 40px;
   margin-bottom: 20px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .what-we-offer__card:hover {
+  background-color: #0066ff;
+  color: white;
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .what-we-offer__image-wrapper {
@@ -349,16 +392,15 @@ a.btn-know-more {
   text-align: center;
   background-color: #f5f9ff;
 }
-
+.testimonials-section > p {
+  margin: 0 auto;
+  padding: 40px 22px;
+  max-width: 442px;
+}
 .testimonials-section h2 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
-}
-
-.testimonials-section p.subtitle {
-  color: #666;
-  margin-bottom: 40px;
 }
 
 .testimonial-container {
@@ -371,9 +413,10 @@ a.btn-know-more {
 
 .testimonial-card {
   padding: 30px;
+  border: 1px solid #f0f0f0;
+
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
   flex: 1 1 0;
 }
@@ -461,6 +504,10 @@ a.btn-know-more {
   .banner-description {
     padding: 0 20px;
   }
+  .contact-button {
+    padding: 20px 30px;
+  }
+
   .testimonial-card {
     width: 160%;
   }

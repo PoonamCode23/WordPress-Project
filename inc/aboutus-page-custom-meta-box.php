@@ -127,10 +127,10 @@ function save_custom_stats_meta_box($post_id) {
         return;
     }
 
-    // Only save for the specific page ID 78
-    if (get_post_type($post_id) !== 'page' || $post_id != 78) {
+    if (get_post_type($post_id) !== 'page' || !in_array($post_id, CUSTOM_STATS_PAGE_IDS)) {
         return;
     }
+    
 
     // List of all fields to save
     $fields = [

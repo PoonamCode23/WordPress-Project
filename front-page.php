@@ -26,7 +26,9 @@ $third_banner_text = get_post_meta( get_the_ID(), '_third_banner_text', true );
       <div class="slide">
         <img src="<?php echo get_template_directory_uri(); ?>/images/slide3.jpg" alt="Slide 3">
       </div>
+      
     </div>
+  
 
     <div class="banner-description">
       <?php if (!empty($styled_paragraph)) : ?>
@@ -73,7 +75,7 @@ $third_banner_text = get_post_meta( get_the_ID(), '_third_banner_text', true );
   <!-- About Us Section -->
   <section class="about-us-container wrapper">
     <div class="info-section">
-      <span class="label">About Us</span>
+      <span class="label font-wrapper">About Us</span>
 
       <?php
       $about_us_title = get_post_meta(get_the_ID(), '_about_us_title', true);
@@ -89,7 +91,7 @@ $third_banner_text = get_post_meta( get_the_ID(), '_third_banner_text', true );
         <p><?php echo esc_html($about_us_description); ?></p>
       <?php endif; ?>
 
-      <a href="#" class="btn-know-more">Know More ➡</a>
+      <a href="#" class="btn-know-more">Know More <span class="icon-right"></span></a>
     </div>
     
     <div class="image-shadow-container">
@@ -113,7 +115,7 @@ $third_banner_text = get_post_meta( get_the_ID(), '_third_banner_text', true );
       <p>
         At Kris & Li Cleaning Services, we specialize in cleaning medical practices, ensuring a hygienic and safe environment for both patients and staff. In addition to our medical cleaning services, we also offer comprehensive office cleaning and strata cleaning solutions, tailored to meet the unique needs of each space.
       </p>
-      <a href="#" class="btn-know-more">Know More ➡</a>
+      <a href="#" class="btn-know-more">Know More <span class="icon-right"></span></a>
     </div>
   </section>
 
@@ -128,7 +130,7 @@ $third_banner_text = get_post_meta( get_the_ID(), '_third_banner_text', true );
       <p>
         We are the leaders of mobile app development in Australia. With over 15 years of expertise developing mobile apps, we’ve created over 380 apps for clients across a broad range of industries.
       </p>
-      <a href="#" class="btn-know-more">Know More ➡</a>
+      <a href="#" class="btn-know-more">Know More <span class="icon-right"></span></a>
     </div>
     <div class="image-shadow-container">
       <div class="image-section purple">
@@ -166,7 +168,7 @@ if (!empty($offers)) :
       </div>
 
       <div class="what-we-offer__button">
-        <a href="#" class="btn btn--primary">Know More ➡</a>
+      <a href="#" class="btn-know-more">Know More <span class="icon-right"></span></a>
       </div>
     </div>
   <?php endforeach; ?>
@@ -188,7 +190,7 @@ if (!empty($offers)) :
       <p>
         At Kris & Li Cleaning Services, we prioritize the health and safety of our clients and their environments. Our strict adherence to Occupational Health and Safety (OHS) principles ensures that we effectively prevent cross-contamination between cleaning sites and within each facility.
       </p>
-      <a href="#" class="btn-know-more contact-us">Contact Us ➡</a>
+      <a href="#" class="contact-button">Contact Us <span class="icon-right-white"></span></a>
     </div>
   </section>
 

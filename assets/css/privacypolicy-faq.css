@@ -1,0 +1,109 @@
+.privacy-policy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+.faq-title,
+.privacy-title {
+  padding-top: 74px;
+}
+.privacy-policy-title {
+  background: #f5f9ff;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 50px;
+  text-align: center;
+}
+
+.privacy-policy-content {
+  font-family: Poppins;
+  margin-top: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #333;
+}
+
+.faq-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+
+details {
+  border-bottom: 1px solid grey;
+  font-size: 22px;
+  padding: 28px 0;
+  font-family: Poppins;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+details p {
+  margin: 10px 0 0 0;
+  color: #555;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2563eb !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.load-more {
+  margin: 30px auto 0;
+  display: block;
+  padding: 10px 24px;
+  border: 1px solid #2563eb;
+  border-radius: 9999px;
+  background-color: white;
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.load-more:hover {
+  background-color: #f0f4ff;
+}
+
+@media (max-width: 500px) {
+  .privacy-policy-title {
+    font-size: 40px !important;
+  }
+  .privacy-policy-container {
+    padding: 80px 22px !important;
+  }
+  details {
+    font-size: 16px;
+  }
+}

@@ -1,6 +1,7 @@
 
   <section class="testimonials-section">
-    <h2>Testimonials</h2>
+    <h1>Testimonials</h1>
+    <p>We are an Australian web design agency that offers full-service solutions for clients worldwide.</p>
 
     <?php
     // Get current page ID
